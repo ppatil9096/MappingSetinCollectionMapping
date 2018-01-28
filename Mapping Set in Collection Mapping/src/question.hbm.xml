@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.pravin.hibernate.Question" table="question_collection_mapping_set">
+		<id name="qid">
+			<generator class="increment"></generator>
+		</id>
+		<property name="question"></property>
+		<set name="answers" table="answer_collection_mapping_set">
+			<key column="qid"></key>
+			<element column="answer" type="string"></element>
+		</set>
+	</class>
+</hibernate-mapping>
